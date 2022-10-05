@@ -1,0 +1,23 @@
+{
+  "name": "sisgeeapi",
+  "version": "1.0.0",
+  "description": "Projeto para testes de estrutura e arquitetura",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "start:dev" : "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
