@@ -1,5 +1,3 @@
-const { pool } = require('../config');
-
 const { getPrediosDB, addPredioDB, updatePredioDB, deletePredioDB, getPredioPorCodigoDB } = require('../servicos/servicoPredios')
 
 const getPredios = async (request, response) => {
