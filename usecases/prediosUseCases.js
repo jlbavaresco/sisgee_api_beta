@@ -1,9 +1,10 @@
 const { pool } = require('../config');
+const Predio = require('../entities/predio')
 
 const getPrediosDB = async () => {
     try {    
-        const results = await pool.query('SELECT * FROM predios order by codigo');
-        return results.rows;
+        const { rows } = await pool.query('SELECT * FROM predios order by codigo');
+        return rows.map((predio) => new Predio(predio.codigo, predio.nome, predio.descricao, predio.sigla));        
     } catch (err) {
         throw "Erro : " + err;
     }
@@ -15,7 +16,8 @@ const addPredioDB = async (body) => {
         const results = await pool.query(`INSERT INTO predios (nome, descricao, sigla) 
         values ($1, $2, $3) returning codigo, nome, descricao, sigla`,
         [nome, descricao, sigla]);
-        return results.rows[0];
+        const predio = results.rows[0];
+        return new Predio(predio.codigo, predio.nome, predio.descricao, predio.sigla);
     } catch (err) {
         throw "Erro ao inserir o prédio: " + err;
     }    
@@ -27,8 +29,12 @@ const updatePredioDB = async (body) => {
         const { codigo, nome, descricao, sigla }  = body; 
         const results = await pool.query(`UPDATE predios SET nome=$1, descricao=$2, sigla=$3
         where codigo=$4 returning codigo, nome, descricao, sigla`,
-        [nome, descricao, sigla, codigo]);
-        return results.rows[0];
+        [nome, descricao, sigla, codigo]);        
+        if (results.rowCount == 0){
+            throw `Nenhum registro encontrado com o código ${codigo} para ser alterado`;
+        }
+        const predio = results.rows[0];
+        return new Predio(predio.codigo, predio.nome, predio.descricao, predio.sigla);
     } catch (err) {
         throw "Erro ao alterar o prédio: " + err;
     }      
@@ -55,7 +61,8 @@ const getPredioPorCodigoDB = async (codigo) => {
         if (results.rowCount == 0){
             throw "Nenhum registro encontrado com o código: " + codigo;
         } else {
-            return results.rows[0];
+            const predio = results.rows[0];
+            return new Predio(predio.codigo, predio.nome, predio.descricao, predio.sigla);            
         }       
     } catch (err) {
         throw "Erro ao recuperar o prédio: " + err;

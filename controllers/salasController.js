@@ -1,18 +1,18 @@
-const { getPrediosDB, addPredioDB, updatePredioDB, deletePredioDB, getPredioPorCodigoDB } = require('../servicos/servicoPredios')
+const { getSalasDB, addSalaDB, updateSalaDB, deleteSalaDB, getSalaPorCodigoDB } = require('../usecases/salasUseCases')
 
-const getPredios = async (request, response) => {
-    await getPrediosDB()
+const getSalas = async (request, response) => {
+    await getSalasDB()
         .then(data => response.status(200).json(data))
         .catch(err => response.status(400).json({
             status: 'error',
-            message: 'Erro ao consultar o prédio: ' + err
+            message: 'Erro ao consultar a sala: ' + err
         }));
 }
 
-const addPredio = async (request, response) => {
-    await addPredioDB(request.body)
+const addSala = async (request, response) => {
+    await addSalaDB(request.body)
         .then(data => response.status(200).json({
-            status: "success", message: "Prédio criado",
+            status: "success", message: "Sala criada",
             objeto: data
         }))
         .catch(err => response.status(400).json({
@@ -21,10 +21,10 @@ const addPredio = async (request, response) => {
         }));
 }
 
-const updatePredio = async (request, response) => {
-    await updatePredioDB(request.body)
+const updateSala = async (request, response) => {
+    await updateSalaDB(request.body)
         .then(data => response.status(200).json({
-            status: "success", message: "Prédio alterado",
+            status: "success", message: "Sala alterada",
             objeto: data
         }))
         .catch(err => response.status(400).json({
@@ -33,8 +33,8 @@ const updatePredio = async (request, response) => {
         }));
 }
 
-const deletePredio = async (request, response) => {
-    await deletePredioDB(parseInt(request.params.codigo))
+const deleteSala = async (request, response) => {
+    await deleteSalaDB(parseInt(request.params.codigo))
         .then(data => response.status(200).json({
             status: "success", message: data
         }))
@@ -44,8 +44,8 @@ const deletePredio = async (request, response) => {
         }));        
 }
 
-const getPredioPorCodigo = async (request, response) => {
-    await getPredioPorCodigoDB(parseInt(request.params.codigo))
+const getSalaPorCodigo = async (request, response) => {
+    await getSalaPorCodigoDB(parseInt(request.params.codigo))
         .then(data => response.status(200).json(data))
         .catch(err => response.status(400).json({
             status: 'error',
@@ -54,6 +54,6 @@ const getPredioPorCodigo = async (request, response) => {
 }
 
 module.exports = {
-    getPredios, addPredio, updatePredio, deletePredio, getPredioPorCodigo
+    getSalas, addSala, updateSala, deleteSala, getSalaPorCodigo
 }
 
