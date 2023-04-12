@@ -1,0 +1,13 @@
+@echo off
+call :sub >output.txt
+exit /b
+:sub
+echo Fazendo uma requisição get com curl...
+curl -X GET http://localhost:3002/predios
+echo Adicionando dados com requisição post...
+curl -X POST -H "Content-Type: application/json" -d "{\"nome\":\"Predio 6\",\"descricao\":\"Predio\",\"sigla\":\"P6\"}" http://localhost:3002/predios 
+echo Atualizando dados com PUT...
+curl -X PUT -H "Content-Type: application/json" -d "{\"codigo\":\"28\",\"nome\":\"Predio 6 alterado\",\"descricao\":\"Predio\",\"sigla\":\"P6\"}" http://localhost:3002/predios 
+echo Removendo recurso com DELETE...
+curl -X DELETE http://localhost:3002/predios/34
+echo Testes Finalizados!

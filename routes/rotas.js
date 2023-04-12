@@ -1,31 +1,31 @@
 const { Router } = require('express');
 
-const comumController = require('../controllers/comumController')
-const prediosController = require('../controllers/prediosController');
-const salasController = require("../controllers/salasController");
+const { getBemVindo } = require('../controllers/comumController')
+const { getPredios, addPredio, updatePredio, deletePredio, getPredioPorCodigo } = require('../controllers/prediosController');
+const { getSalas, addSala, updateSala, deleteSala, getSalaPorCodigo } = require("../controllers/salasController");
 
 const rotas = new Router();
 
 rotas.route('/')
-   .get(comumController.getBemVindo)
+   .get(getBemVindo)
 
 rotas.route('/salas')
-   .get(salasController.getSalas)
-   .post(salasController.addSala)
-   .put(salasController.updateSala)
+   .get(getSalas)
+   .post(addSala)
+   .put(updateSala)
 
 rotas.route('/salas/:codigo')
-   .get(salasController.getSalaPorCodigo)
-   .delete(salasController.deleteSala)
+   .get(getSalaPorCodigo)
+   .delete(deleteSala)
 
 
 rotas.route('/predios')
-     .get(prediosController.getPredios)
-     .post(prediosController.addPredio)
-     .put(prediosController.updatePredio)
+     .get(getPredios)
+     .post(addPredio)
+     .put(updatePredio)
 
 rotas.route('/predios/:codigo')
-     .get(prediosController.getPredioPorCodigo)
-     .delete(prediosController.deletePredio)
+     .get(getPredioPorCodigo)
+     .delete(deletePredio)
 
 module.exports = rotas;
