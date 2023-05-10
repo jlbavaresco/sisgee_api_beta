@@ -1,5 +1,5 @@
 const { getEquipamentosPorSalaDB, addEquipamentoDB, updateEquipamentoDB, 
-    deleteEquipamentoDB, getEquipamentoPorCodigoDB } = require('../useCases/equipamentoUseCases');
+    deleteEquipamentoDB, getEquipamentoPorCodigoDB } = require('../usecases/equipamentoUseCases');
   
   const getEquipamentosPorSala = async (request, response) => {
       await getEquipamentosPorSalaDB(request.params.codigosala)
