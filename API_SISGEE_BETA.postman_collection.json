@@ -1,0 +1,406 @@
+{
+	"info": {
+		"_postman_id": "87c54ebf-c60c-4245-824a-73cdb3c9e364",
+		"name": "API_SISGEE_BETA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET PREDIOS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c3VhcmlvIjoiam9yZ2ViYXZhcmVzY29AaWZzdWwuZWR1LmJyIiwibm9tZV91c3VhcmlvIjoiSm9yZ2UgQmF2YXJlc2NvIiwiaWF0IjoxNjY3MzEyMTU0LCJleHAiOjE2NjczMTI0NTR9.B7BEy2YFZ75VgLLFJBBxjauhBTPDAkXijhlkHrbfP6Q",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3002/predios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"predios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Predios",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c3VhcmlvIjoiam9yZ2ViYXZhcmVzY29AaWZzdWwuZWR1LmJyIiwibm9tZV91c3VhcmlvIjoiSm9yZ2UgQmF2YXJlc2NvIiwiaWF0IjoxNjc1NzA1NDUwLCJleHAiOjE2NzU3MDU3NTB9.9gMKWye4rL6kdM6riT2GNpGOTkXSGEwO7o8UCTwdeTA",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"nome\":\"Prédio 5\", \"descricao\":\"Computação\", \"sigla\": \"P5\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/predios",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"predios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update predios",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c3VhcmlvIjoiam9yZ2ViYXZhcmVzY29AaWZzdWwuZWR1LmJyIiwibm9tZV91c3VhcmlvIjoiSm9yZ2UgQmF2YXJlc2NvIiwiaWF0IjoxNjY1NTEwMzg1LCJleHAiOjE2NjU1MTA2ODV9.qzSoAWgu4ne2ZBgBFFnkxkABtnSL_vUTXE22DuNojUs",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"codigo\": 9,\n        \"nome\": \"Prédio 3\",\n        \"descricao\": \"Mecanica\",\n        \"sigla\": \"P3\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/predios",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"predios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get predios por codigo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c3VhcmlvIjoiam9yZ2ViYXZhcmVzY29AaWZzdWwuZWR1LmJyIiwibm9tZV91c3VhcmlvIjoiSm9yZ2UgQmF2YXJlc2NvIiwiaWF0IjoxNjc1NzA1NDUwLCJleHAiOjE2NzU3MDU3NTB9.9gMKWye4rL6kdM6riT2GNpGOTkXSGEwO7o8UCTwdeTA",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/predios/3",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"predios",
+						"3"
+					],
+					"query": [
+						{
+							"key": "x-access-token",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete predio",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF91c3VhcmlvIjoiam9yZ2ViYXZhcmVzY29AaWZzdWwuZWR1LmJyIiwibm9tZV91c3VhcmlvIjoiSm9yZ2UgQmF2YXJlc2NvIiwiaWF0IjoxNjY1NTEwNDU0LCJleHAiOjE2NjU1MTA3NTR9.1zcFctkcCy9fXxXU8YAZ2Bu-2J_rCoew_8xyoRRdHmw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3002/predios/81",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"predios",
+						"81"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"jorgebavaresco@ifsul.edu.br\",\"senha\":\"123456\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get salas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/salas",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"salas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD Sala",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"numero\": 511,\r\n        \"descricao\": \"Laboratório\",\r\n        \"capacidade\": 12,\r\n        \"predio\": 61,\r\n        \"nomepredio\": \"Prédio 5\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/salas",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"salas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPdate Sala",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"codigo\": 14,\r\n        \"numero\": 511,\r\n        \"descricao\": \"Laboratório alterdo\",\r\n        \"capacidade\": 12,\r\n        \"predio\": 61,\r\n        \"nomepredio\": \"\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/salas",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"salas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get sala por código",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/salas/14",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"salas",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete sala",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/salas/14",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"salas",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Adicionar equipamento",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"codigo\": 1,\r\n        \"descricao\": \"Computador\",\r\n        \"numero_serie\": \"123456\",\r\n        \"valor\": \"2500.00\",\r\n        \"sala\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/equipamentos",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"equipamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar equipamento",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"codigo\": 1,\r\n        \"descricao\": \"Computador alterado\",\r\n        \"numero_serie\": \"123456\",\r\n        \"valor\": \"2500.00\",\r\n        \"sala\": 1\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3002/equipamentos",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"equipamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get equipamento por código",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/equipamentos/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"equipamentos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete equipamento",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/equipamentos/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"equipamentos",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Equipamento da sala",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3002/equipamentos/sala/12",
+					"host": [
+						"localhost"
+					],
+					"port": "3002",
+					"path": [
+						"equipamentos",
+						"sala",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
